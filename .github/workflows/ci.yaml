@@ -31,10 +31,7 @@ jobs:
         run: ./mvnw jacoco:report
 
       - name: SonarCloud Scan
-        run: >
-          ./mvnw sonar:sonar
-          -Dsonar.projectKey=NguyenHuyHoang20225845_spring-petclinic
-          -Dsonar.organization=NguyenHuyHoang20225845
-          -Dsonar.host.url=https://sonarcloud.io
+        run: ./mvnw sonar:sonar -Dsonar.projectKey=NguyenHuyHoang20225845_spring-petclinic -Dsonar.organization=NguyenHuyHoang20225845 -Dsonar.host.url=https://sonarcloud.io
+
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
